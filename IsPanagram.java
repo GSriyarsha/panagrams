@@ -10,26 +10,25 @@ public class IsPanagram {
 	}
 	public static boolean panagram(char[] inputArray, int len){
 		int count = 0;
-		if (len == 26){
-			for ( int  i = 0; i < len; i ++){
-				if ((i != len - 1) && (((int)inputArray[i]) > ((int)inputArray[i - 1]))){
-					count ++;
-				}
-				else {
-					break;
-				}
+		for ( int  i = 0; i < len; i ++){
+			if ((i != len - 1) && (((int)(inputArray[i] + 1)) == ((int)inputArray[i + 1]))){
+				count ++;
+			}
+			else {
+				break;
 			}
 		}
 		if (count == 26){
 			return true;
 		}
 		return false;
+
 	}
 
 	public static void main(String[] args) {
 		String input = args[0];
-    input.toLowerCase();
-  	sortString (input);
+                input.toLowerCase();
+  	        sortString (input);
 	}
 
 }
