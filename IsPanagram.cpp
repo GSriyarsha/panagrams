@@ -18,25 +18,24 @@ public class IsPanagram {
 	}
 	boolean panagram(String Array, int len){
 		int count = 0;
-		if (len == 26){
-			for ( int  i = 0; i < len; i ++){
-				if ((i != len - 1) && (((int)input[i]) > ((int)input[i - 1]))){
-					count ++;
-				}
-				else {
-					break;
-				}
+		for ( int  i = 0; i < len; i ++){
+			if ((i != len - 1) && (((int)(inputArray[i] + 1)) == ((int)inputArray[i + 1]))){
+				count ++;
+			}
+			else {
+				break;
 			}
 		}
 		if (count == 26){
-			return true;
+		      return true;
 		}
 		return false;
+
 	}
 
 	int main() {
 		String input = argsv[0];
-    tolower(input);
+                tolower(input);
 		sortString (input);
 	}
 
